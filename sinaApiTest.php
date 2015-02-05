@@ -10,17 +10,17 @@ header("Content-type:text/html;charset=utf-8");
  * time 2015-1-24 10:36:27
  */
 
-function getSinaDataTest() {
+function getSinaDataTest($source,$CurrentUser) {
 
 //    source :your sina app key
-    $url = "https://api.weibo.com/2/statuses/user_timeline.json?source=1570487857&page=1&count=10";
+    $url = "https://api.weibo.com/2/statuses/user_timeline.json?source=$source&page=1&count=10";
     $curl = curl_init();
     curl_setopt($curl, CURLOPT_URL, $url);
 
     curl_setopt($curl, CURLOPT_SSL_VERIFYPEER, false);
     curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
 
-    curl_setopt($curl, CURLOPT_USERPWD, "ldsokko@163.com:lds89388389");
+    curl_setopt($curl, CURLOPT_USERPWD, $CurrentUser);
     $data = curl_exec($curl);
     curl_close($curl);
 //    parse json code
@@ -45,7 +45,7 @@ function getSinaDataTest() {
     }
 }
 
-getSinaDataTest();
+getSinaDataTest($source,$CurrentUser);
 ?>
 
 
