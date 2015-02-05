@@ -6,6 +6,7 @@ header("Content-type:text/html;charset=utf-8");
 /*
  * function getSinaDataTest
  * get the sina microblog data by sina api
+ *@param $source:sina app key; $CurrentUser: username:password
  * author lou daosheng
  * time 2015-1-24 10:36:27
  */
@@ -39,7 +40,7 @@ function getSinaDataTest($source,$CurrentUser) {
                             "post_tem"=>$weiboinfo->created_at);
             $result = $collection->insert($array, true);
             if(!$result){
-                echo "inset db error!<br>";
+                echo "insert db error!<br>";
             }
         }
     }
