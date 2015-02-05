@@ -26,7 +26,7 @@ function getSinaDataTest($source,$CurrentUser) {
 //    parse json code
     $json = new Services_JSON();
     $result = $json->decode($data);
-    echo "<pre>";var_dump($result);exit();
+//    echo "<pre>";var_dump($result);exit();
 //    connect mongo
     $conn = new Mongo();
     $db = $conn->mydb;
